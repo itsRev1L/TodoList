@@ -19,6 +19,12 @@ const Home = () => {
       })
     )
   }
+  const deleteTodo = (id) => {
+    setTodos(
+      Todos.filter(Todo => Todo.id !== id)
+    )
+
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 font-sans">
@@ -26,7 +32,7 @@ const Home = () => {
 
 
         <div className="w-[30%] bg-[#F9FAFB] border-r border-[#E5E7EB] overflow-y-auto">
-          <Sidebar Todos={Todos} onSelectTodo={setselectedTodo} toggleComplete={toggleComplete} />
+          <Sidebar Todos={Todos} onSelectTodo={setselectedTodo} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
         </div>
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { FaRegTrashAlt } from "react-icons/fa";
 import { RiTaskLine, RiTaskFill } from "react-icons/ri";
 
-const TodoListItems = ({ Todo, onSelectTodo, toggleComplete }) => {
+const TodoListItems = ({ Todo, onSelectTodo, toggleComplete, deleteTodo }) => {
   const handleComplete = () => {
     toggleComplete(Todo.id);
   }
@@ -25,7 +25,8 @@ const TodoListItems = ({ Todo, onSelectTodo, toggleComplete }) => {
         {Todo.title}
       </span>
 
-      <button className="text-black/80 hover:text-red-600 transition-colors opacity-0 group-hover:opacity-100 cursor-pointer">
+      <button className="text-black/80 hover:text-red-600 transition-colors opacity-0 group-hover:opacity-100 cursor-pointer"
+        onClick={() => deleteTodo(Todo.id)}>
         <FaRegTrashAlt />
       </button>
 
