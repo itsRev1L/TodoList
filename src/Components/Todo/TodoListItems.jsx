@@ -20,8 +20,7 @@ const TodoListItems = ({ Todo, onSelectTodo, toggleComplete, deleteTodo }) => {
 
       <span
         className={`text-neutral-800 flex-1 text-left pl-3 ${Todo.isCompleted ? "line-through" : ""}`}
-        onClick={() => onSelectTodo(Todo)}
-      >
+        onClick={() => onSelectTodo(Todo)}>
         {Todo.title}
       </span>
 
