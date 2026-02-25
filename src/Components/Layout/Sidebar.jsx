@@ -22,6 +22,7 @@ const Sidebar = ({ Todos, onSelectTodo, toggleComplete, deleteTodo, onAddClick }
           onSelectTodo={onSelectTodo}
           toggleComplete={toggleComplete}
           deleteTodo={deleteTodo}
+
         />
       </div>
 

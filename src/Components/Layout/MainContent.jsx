@@ -22,9 +22,9 @@ const MainContent = ({ selectedTodo, isAdding, addTodo, isEditing, UpdateTodo, s
         ) :
           isEditing && selectedTodo ?
             <EditForm
-              todo={selectedTodo}
-              updateTodo={UpdateTodo}
-              setIsEditing={setIsEditing}
+              addTodo={UpdateTodo}
+              initialTodo={selectedTodo}
+              isEditing={true}
             />
             :
             selectedTodo ? (
