@@ -3,14 +3,18 @@ import TodoListItems from './TodoListItems'
 
 const TodoList = ({ Todos, onSelectTodo, toggleComplete, deleteTodo }) => {
   return (
-    <div>
+    <div className="space-y-1 sm:space-y-2">
       {
         Todos.map(Todo => (
-          <TodoListItems key={Todo.id} Todo={Todo} onSelectTodo={onSelectTodo} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
+          <TodoListItems
+            key={Todo.id}
+            Todo={Todo}
+            onSelectTodo={onSelectTodo}
+            toggleComplete={toggleComplete}
+            deleteTodo={deleteTodo}
+          />
         ))
-
       }
-
     </div>
   )
 }
