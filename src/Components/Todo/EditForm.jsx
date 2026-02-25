@@ -41,13 +41,13 @@ const EditForm = ({ todo, updateTodo, setIsEditing }) => {
         <button
           type="button"
           onClick={() => setIsEditing(false)}
-          className="px-6 py-2 text-neutral-800 border-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-colors cursor-pointer"
+          className="px-6 py-2  text-neutral-800 border-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-colors cursor-pointer"
         >
           Cancel
         </button>
         <button
           type="submit"
-          className="px-6 py-2 bg-[#4F46E5] text-white rounded-lg hover:bg-[#6D5FF7] transition-colors"
+          className="px-6 py-2 text-white bg-neutral-800 border-2 rounded-lg transition-colors cursor-pointer"
         >
           Update
         </button>
