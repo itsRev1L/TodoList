@@ -10,11 +10,13 @@ const Home = () => {
     { id: 3, title: "Read book", description: "Organize files and folders on desktop and documents.", isCompleted: true },
 
   ])
+
+  //States
   const [selectedTodo, setselectedTodo] = useState(null);
   const [isAdding, setIsAdding] = useState(false);
-  const handleAddClick = () => {
-    setIsAdding(!isAdding)
-  }
+  const [isEditing, setIsEditing] = useState(false);
+
+
   //changes the "isComplete" 
   const toggleComplete = (id) => {
     setTodos(
@@ -25,7 +27,11 @@ const Home = () => {
       })
     )
   }
-  //Add function
+  //Add functions
+  const handleAddClick = () => {
+    setIsAdding(!isAdding)
+  }
+  //this function adds a new obj to main State
   const addTodo = (title, description) => {
     const newTodo =
     {
@@ -37,6 +43,18 @@ const Home = () => {
     setTodos([...Todos, newTodo])
     setIsAdding(false)
   }
+  //Edit/Update function
+  const UpdateTodo = (id, newTitle, newDescription) => {
+    setTodos(
+
+      Todos.map((Todo) => (
+        id === Todo.id ?
+          { ...Todo, title: newTitle, description: newDescription }
+          : Todo
+      ))
+    )
+    setIsEditing(false)
+  }
   //delete function
   const deleteTodo = (id) => {
     setTodos(
@@ -44,6 +62,10 @@ const Home = () => {
 
     )
     selectedTodo?.id === id ? setselectedTodo(null) : null
+  }
+  const handleEditClick = () => {
+
+    setIsEditing(!isEditing)
   }
 
 
@@ -53,12 +75,23 @@ const Home = () => {
 
 
         <div className="w-[30%] bg-[#F9FAFB] border-r border-[#E5E7EB] overflow-y-auto">
-          <Sidebar Todos={Todos} onSelectTodo={setselectedTodo} toggleComplete={toggleComplete} deleteTodo={deleteTodo} onAddClick={handleAddClick} />
+          <Sidebar Todos={Todos}
+            onSelectTodo={setselectedTodo}
+
+            toggleComplete={toggleComplete}
+            deleteTodo={deleteTodo}
+            onAddClick={handleAddClick} />
         </div>
 
 
         <div className="w-[70%] bg-white overflow-y-auto">
-          <MainContent selectedTodo={selectedTodo} isAdding={isAdding} addTodo={addTodo} />
+          <MainContent selectedTodo={selectedTodo}
+            isAdding={isAdding}
+            addTodo={addTodo}
+            onEditClick={handleEditClick}
+            isEditing={isEditing}
+            UpdateTodo={UpdateTodo}
+            setIsEditing={setIsEditing} />
         </div>
       </div>
     </div>

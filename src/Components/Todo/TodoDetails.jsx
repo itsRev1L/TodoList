@@ -22,7 +22,6 @@ const TodoDetails = ({ Todo }) => {
         </div>
       </div>
 
-      {/* وضعیت */}
       <div className="mt-4 text-sm text-gray-500 flex justify-end">
         {Todo.isCompleted ? 'Completed' : 'ongoing'}
       </div>
