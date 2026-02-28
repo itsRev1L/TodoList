@@ -22,18 +22,18 @@ const EditForm = ({ todo, updateTodo, setIsEditing }) => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter title..."
-          className="w-full p-2 sm:p-3 bg-transparent focus:outline-none text-base sm:text-lg border-b border-gray-200"
+          className="w-full p-2 sm:p-3 bg-transparent focus:outline-none text-base sm:text-lg "
           autoFocus
         />
       </div>
 
-      <div className="flex-1 flex flex-col min-h-0">
+      <div className="flex-1 flex flex-col min-h-0  ml-1 sm:ml-2">
         <h4 className="text-base sm:text-xl font-semibold text-gray-700 mb-1 sm:mb-2">Description</h4>
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Enter description..."
-          className="w-full flex-1 bg-transparent p-2 text-sm sm:text-base text-gray-600 overflow-y-auto whitespace-pre-wrap wrap-break-wor min-h-auto"
+          className="w-full flex-1 bg-transparent focus:outline-none resize-none p-2 text-sm sm:text-base  border-gray-200 rounded min-h-[200px] sm:min-h-0"
         />
       </div>
 

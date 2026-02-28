@@ -4,7 +4,7 @@ import AddForm from '../Todo/AddForm'
 import EditForm from '../Todo/EditForm'
 import { HiMenu } from "react-icons/hi";
 
-const MainContent = ({ selectedTodo, isAdding, addTodo, isEditing, UpdateTodo, setIsEditing, onEditClick, onMenuClick }) => {
+const MainContent = ({ selectedTodo, isAdding, addTodo, isEditing, UpdateTodo, setIsEditing, onEditClick, onMenuClick, setIsAdding }) => {
   return (
     <div className="h-full flex flex-col">
 
@@ -31,13 +31,14 @@ const MainContent = ({ selectedTodo, isAdding, addTodo, isEditing, UpdateTodo, s
 
       <div className="flex-1 min-h-0">
         {isAdding ? (
-          <AddForm addTodo={addTodo} />
+          <AddForm addTodo={addTodo} setIsAdding={setIsAdding} />
         ) :
           isEditing && selectedTodo ?
             <EditForm
               todo={selectedTodo}
               updateTodo={UpdateTodo}
               setIsEditing={setIsEditing}
+
             />
             :
             selectedTodo ? (

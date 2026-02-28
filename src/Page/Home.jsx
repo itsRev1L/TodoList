@@ -97,7 +97,9 @@ const Home = () => {
 
           <div className="w-[70%] bg-white overflow-y-auto">
             <MainContent
+
               selectedTodo={selectedTodo}
+              setIsAdding={setIsAdding}
               isAdding={isAdding}
               addTodo={addTodo}
               onEditClick={handleEditClick}

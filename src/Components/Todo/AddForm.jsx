@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const AddForm = ({ addTodo }) => {
+const AddForm = ({ addTodo, setIsAdding }) => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
 
@@ -23,7 +23,7 @@ const AddForm = ({ addTodo }) => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter title..."
-          className="w-full p-2 sm:p-3 bg-transparent focus:outline-none text-base sm:text-lg border-b border-gray-200"
+          className="w-full p-2 sm:p-3 bg-transparent focus:outline-none text-base sm:text-lg  border-gray-200"
           autoFocus
         />
       </div>
@@ -34,16 +34,24 @@ const AddForm = ({ addTodo }) => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Enter description..."
-          className="w-full flex-1 bg-transparent focus:outline-none resize-none p-2 text-sm sm:text-base border border-gray-200 rounded min-h-[200px] sm:min-h-0"
+          className="w-full flex-1 bg-transparent focus:outline-none resize-none p-2 text-sm sm:text-base  border-gray-200 rounded min-h-[200px] sm:min-h-0"
         />
       </div>
 
-      <div className="flex justify-end mt-3 sm:mt-4 mb-3 sm:mb-6 mr-2 sm:mr-4">
+
+      <div className="flex justify-end gap-2 sm:gap-3 mt-3 sm:mt-4 mb-3 sm:mb-6 mr-2 sm:mr-4">
         <button
-          type="submit"
+          type="button"
+          onClick={() => setIsAdding(false)}
           className="px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base text-neutral-800 border-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-colors cursor-pointer"
         >
-          Save
+          Cancel
+        </button>
+        <button
+          type="submit"
+          className="px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base text-white bg-neutral-800 border-2 rounded-lg transition-colors cursor-pointer"
+        >
+          Update
         </button>
       </div>
 
