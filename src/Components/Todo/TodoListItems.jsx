@@ -22,7 +22,7 @@ const TodoListItems = ({ Todo, onSelectTodo, toggleComplete, deleteTodo }) => {
         {Todo.title}
       </span>
 
-      <button className="text-black/80 hover:text-red-600 transition-colors opacity-0 group-hover:opacity-100 cursor-pointer p-1"
+      <button className="text-black/80 hover:text-red-600 transition-colors  group-hover:opacity-100 cursor-pointer p-1"
         onClick={() => deleteTodo(Todo.id)}>
         <FaRegTrashAlt size={16} className="sm:w-4 sm:h-4" />
       </button>
